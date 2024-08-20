@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="cotizar-header">
+        <p>cabecera</p>
+        <a (click)="navLogin()">Iniciar Sesión</a>
+    </div>
+    <div class="cotizar-body">
+        <div class="container">
+            <h4 class="text-center py-3">Puedes cotizar tu seguro en pocos segundos!</h4>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <label for="ramo" class="form-label">Ramos de Seguro</label>
+                    <select class="form-select" aria-label="Default select example" id="ramo"
+                        (change)="onRamoChange($event)">
+                        <option selected hidden value="">Seleccionar</option>
+                        @for(ram of ramos; track ram.id_ramo){
+                        <option [value]="ram.id_ramo">{{ ram.ramo }}</option>
+                        }
+                    </select>
+                </div>
+                @if(tipos.length > 0){
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <label for="tipo_seguro" class="form-label">Tipos de Seguro</label>
+                    <select class="form-select" aria-label="Default select example" id="tipo_seguro"
+                        (change)="onTipoChange($event)">
+                        <option selected hidden value="">Seleccionar</option>
+                        @for(tip of tipos; track tip.id_ramo_tipo){
+                        <option [value]="tip.id_ramo_tipo">{{ tip.ramo_tipo }}</option>
+                        }
+                    </select>
+                </div>
+                }
+
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <label for="distrito" class="form-label">Distrito</label>
+                    <select class="form-select" aria-label="Default select example" id="distrito"
+                        (change)="onDistritoChange($event)">
+                        <option selected hidden value="">Seleccionar</option>
+                        @for(dis of distritos; track dis.id_distrito){
+                        <option [value]="dis.id_distrito">{{ dis.distrito }}</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <label for="valor_asegurado" class="form-label">Valor Asegurado $</label>
+                    <input type="number" step="0.01" min="1" class="form-control" id="valor_asegurado"
+                        placeholder="Expresado en USD" (input)="onValorAseguradoChange($event)">
+                </div>
+            </div>
+            @if(apiResponsePrima==null){
+            <div class="row justify-content-center py-3">
+                <div class="col-auto">
+                    <button class="btn btn-primary" (click)="submitData()">COTIZAR</button>
+                </div>
+            </div>
+            }
+            @if(apiResponsePrima!=null){
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="prima" class="form-label">Resultado de la Cotizacion Prima en USD</label>
+                    <input type="number" step="0.01" min="1" class="form-control" id="prima" [value]="apiResponsePrima"
+                        placeholder="Prima calculada">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="nombre" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Mi nombre completo"
+                        (input)="onNombreCompleto($event)">
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <label for="celular" class="form-label">Número de Celular</label>
+                    <input type="number" class="form-control" id="celular" placeholder="77712345"
+                        (input)="onCelular($event)">
+                </div>
+            </div>
+            <div class="row justify-content-center py-3">
+                <div class="col-auto">
+                    <button class="btn btn-success" (click)="submitForm()">CONTINUAR CON LA COTIZACION</button>
+                </div>
+            </div>
+            }
+
+        </div>
+    </div>
+    <div class="cotizar-footer">
+
+    </div>
+</div>

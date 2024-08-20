@@ -1,0 +1,19 @@
+.cotizar-header {
+    background-color: aqua;
+    width: 100%;
+    height: 25vh;
+}
+
+.cotizar-body {
+    background-color: azure;
+    width: 100%;
+    height: 60vh;
+}
+.text-center{
+    text-align: center;
+}
+.cotizar-footer {
+    background-color: aquamarine;
+    width: 100%;
+    height: 15vh;
+}

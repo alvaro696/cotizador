@@ -1,0 +1,136 @@
+<div class="container mbody">
+    <form class="mfocot border">
+        <div class="md-4">
+            <img src="assets/usu.png" class="img-fluid" style="width: 150px;height: 150px; text-align: center;">
+        </div>
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="InputDepartamento" class="form-label">Departamento</label>
+                    <select name="tipo_bien" id="tipo_bien" class="form-control">
+                        <option hidden>Seleccione una opción...</option>
+                        <option value="">La Paz</option>
+                        <option value="">Cochabamba</option>
+                        <option value="">Santa Cruz</option>
+                        <option value="">Tarija</option>
+                        <option value="">Oruro</option>
+                        <option value="">Beni</option>
+                        <option value="">Pando</option>
+                        <option value="">Chuquisaca</option>
+                        <option value="">Potosí</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="InputTipoBien" class="form-label">Tipo de bien</label>
+                    <select name="tipo_bien" id="tipo_bien" class="form-control">
+                        <option hidden>Seleccione una opción...</option>
+                        <option value="">Automotor</option>
+                        <option value="">Construcción</option>
+                        <option value="">Departamento</option>
+                        <option value="">Casa</option>
+                        <option value="">Edificio</option>
+                        <option value="">Transporte mercadería</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="InputValorAprox" class="form-label">Valor aproximado $</label>
+                    <input type="number" class="form-control" id="valor_aprox">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputAnioCostruccion" class="form-label">Año de Construcción/Adquisición</label>
+                    <input type="text" class="form-control" id="detalle">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputPlacaNDDRR" class="form-label">Placa/N° en DDRR</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputUso" class="form-label">Uso</label>
+                    <select name="uso" id="uso" class="form-control">
+                        <option hidden>Seleccione una opción...</option>
+                        <option value="">Privado</option>
+                        <option value="">Publico</option>
+                        <option value="">Oficial</option>
+                        <option value="">Alquilado</option>
+                        <option value="">Propio</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success">Cotizar</button>
+
+    </form>
+</div>
+<div class="containe mbody">
+    <form class="mfocot border">
+        <div class="container text-center">
+            <h2>Resultado de su cotización</h2>
+            <h2>Prima $: <b>500</b></h2>
+            <h5 style="text-align: justify;">
+                <b>Coberturas Solicitadas:</b> <br>
+            </h5>
+            <h6 style="text-align: justify;">
+                <i> * Cobertura básica (incendio, robo, daños por agua, etc.). <br>
+                    * Coberturas adicionales (terremotos, inundaciones, responsabilidad civil, etc.). <br>
+                    * Límites de cobertura deseados. <br>
+                    * Deductibles aplicables.</i>
+            </h6>
+            <h5>Datos para envio de su cotización</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="InputNomber" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="departamento">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputPrimerApellido" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control" id="PrimerApellido">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputSegundoApellido" class="form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="SegundoApellido">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputDireccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion">
+                </div>
+                <div class="col-md-3">
+                    <label for="InputDocumentoIdentidad" class="form-label">Documento de Identidad</label>
+                    <input type="number" class="form-control" id="DocumentoIdentidad">
+                </div>
+                <div class="col-md-1">
+                    <label for="InputComplemento" class="form-label">Complento</label>
+                    <input type="text" class="form-control" id="complemento" value="Vehículo">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputLugarExpedicion" class="form-label">Lugar de expedición</label>
+                    <select name="lugar_expedicion" id="lugar_expedicion" class="form-control">
+                        <option hidden>Seleccione una opción...</option>
+                        <option value="">La Paz</option>
+                        <option value="">Cochabamba</option>
+                        <option value="">Santa Cruz</option>
+                        <option value="">Tarija</option>
+                        <option value="">Oruro</option>
+                        <option value="">Beni</option>
+                        <option value="">Pando</option>
+                        <option value="">Chuquisaca</option>
+                        <option value="">Potosí</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="InputDetalle" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="detalle">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputValorAsegurado" class="form-label">Nro. Celular (WhatsApp)</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="col-md-4">
+                    <label for="Input" class="form-label">Nro. Celular de referencia</label>
+                    <input type="number" class="form-control" id="exampleInputPassword1">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success">Cotizar</button>
+
+    </form>
+</div>

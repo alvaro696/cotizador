@@ -1,0 +1,84 @@
+<div class="div_body">
+
+    <div class="form-register">
+        <h2>Registro de Vehículo</h2>
+        <div class="info-section">
+            <h3>Titular de la Póliza: {{nombre}}</h3>
+            <h5>Nro. de Cotizacion: {{id_cotizacion}}</h5>
+            <p>Valor Asegurado: <b>{{valor_asegurado}} USD</b><br>Prima Calculada: <b>{{prima}} USD</b></p>
+            <h5>Datos Adicionales</h5>
+            <p>Ramo del Seguro: {{ramo}}<br>Tipo de Seguro: {{ramo_tipo}}</p>
+        </div>
+        <form [formGroup]="miFormulario" (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="clase" class="form-label">Clase de Vehículo</label>
+                <select formControlName="clase" id="clase" class="form-control">
+                    <option value="" hidden>Seleccione una opción</option>
+                    <option>AUTOMOVIL</option>
+                    <option>CAMIONETA</option>
+                    <option>VAGONETA</option>
+                    <option>CAMION</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="marca" class="form-label">Marca del Vehículo</label>
+                <select formControlName="marca" id="marca" class="form-control">
+                    <option value="" hidden>Seleccione una opción</option>
+                    <option>TOYOTA</option>
+                    <option>NISSAN</option>
+                    <option>KEYTON</option>
+                    <option>SUZUKI</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="modelo" class="form-label">Modelo</label>
+                <input type="text" class="form-control" id="modelo" formControlName="modelo" placeholder="Ej. Corolla">
+            </div>
+            <div class="mb-3">
+                <label for="placa" class="form-label">Placa</label>
+                <input type="text" class="form-control" id="placa" formControlName="placa" placeholder="Ej. 1234ABC">
+            </div>
+            <div class="mb-3">
+                <label for="color" class="form-label">Color</label>
+                <input type="text" class="form-control" id="color" formControlName="color" placeholder="Ej. Blanco">
+            </div>
+            <div class="mb-3">
+                <label for="uso" class="form-label">Uso</label>
+                <select formControlName="uso" id="uso" class="form-control">
+                    <option value="" hidden>Seleccione una opción</option>
+                    <option>PUBLICO</option>
+                    <option>PARTICULAR</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="tipo_pago" class="form-label">Tipo de Pago</label>
+                <select formControlName="tipo_pago" id="tipo_pago" class="form-control">
+                    <option value="" hidden>Seleccione una opción</option>
+                    <option>CONTADO</option>
+                    <option>CRÉDITO</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="foto_frontal" class="form-label">Fotografia Frontal</label>
+                <input type="file" class="form-control" id="foto_frontal" formControlName="foto_frontal"
+                    (change)="onFileChange($event, 1)">
+            </div>
+            <div class="mb-3">
+                <label for="foto_lateral" class="form-label">Fotografia Lateral</label>
+                <input type="file" class="form-control" id="foto_lateral" formControlName="foto_lateral"
+                    (change)="onFileChange($event, 2)">
+            </div>
+            <div class="mb-3">
+                <label for="foto_trasera" class="form-label">Fotografia Trasera</label>
+                <input type="file" class="form-control" id="foto_trasera" formControlName="foto_trasera"
+                    (change)="onFileChange($event, 3)">
+            </div>
+            <div class="form-text mt-3">* Todos los campos son obligatorios.</div>
+            <button type="submit" class="btn btn-primary w-100">Crear mi Póliza</button>
+            <div class="info-section">
+                <p>Tiene un plazo de 30 dias paa realizar el pago total o la primera cuota, en caso de incumplimiento la
+                    poliza sera anulada</p>
+            </div>
+        </form>
+    </div>
+</div>

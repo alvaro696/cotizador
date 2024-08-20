@@ -1,0 +1,41 @@
+.body_login {
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-container .form-control {
+    border-radius: 25px;
+}
+
+.login-container .btn-primary {
+    border-radius: 25px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+}
+
+.login-container .btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3, #003c7e);
+}
+
+.login-container .forgot-password {
+    text-align: right;
+    display: block;
+    margin-top: 10px;
+}
+
+.login-container .forgot-password:hover {
+    text-decoration: underline;
+}

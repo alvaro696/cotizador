@@ -1,0 +1,77 @@
+<div class="containe mbody">
+    <form class="mfocot border" [formGroup]="miFormulario" (ngSubmit)="onSubmit()">
+        <div class="container text-center">
+            <h2>Resultado de su cotización</h2>
+            <h2>Prima $: <b>{{prima}}</b></h2>
+            <h5 style="text-align: justify;">
+                <b>Coberturas Solicitadas:</b> <br>
+            </h5>
+            <h6 style="text-align: justify;">
+                <i> * Cobertura básica (incendio, robo, daños por agua, etc.). <br>
+                    * Coberturas adicionales (terremotos, inundaciones, responsabilidad civil, etc.). <br>
+                    * Límites de cobertura deseados. <br>
+                    * Deductibles aplicables.</i>
+            </h6>
+            <h5>Datos para envio de su cotización</h5>
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="nombres" class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" id="nombres" formControlName="nombres"
+                        (change)="onNombres($event)">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="primer_apellido" class="form-label">Primer Apellido</label>
+                    <input type="text" class="form-control" id="primer_apellido" formControlName="primer_apellido">
+                </div>
+                <div class="col-md-4">
+                    <label for="segundo_apellido" class="form-label">Segundo Apellido</label>
+                    <input type="text" class="form-control" id="segundo_apellido" formControlName="segundo_apellido">
+                </div>
+                <div class="col-md-4">
+                    <label for="direccion" class="form-label">Dirección</label>
+                    <input type="text" class="form-control" id="direccion" formControlName="direccion">
+                </div>
+                <div class="col-md-3">
+                    <label for="nro_documento" class="form-label">Documento de Identidad</label>
+                    <input type="text" class="form-control" id="nro_documento" formControlName="nro_documento"
+                        (change)="onNroDocumento($event)" placeholder="Minimo 8 caracteres">
+                </div>
+                <div class="col-md-1">
+                    <label for="complemento" class="form-label">Complento</label>
+                    <input type="text" class="form-control" id="complemento" formControlName="complemento">
+                </div>
+                <div class="col-md-4">
+                    <label for="lugar_expedicion" class="form-label">Lugar de expedición</label>
+                    <select id="lugar_expedicion" class="form-control" formControlName="lugar_expedicion">
+                        <option hidden value="">Seleccione una opción...</option>
+                        <option>La Paz</option>
+                        <option>Cochabamba</option>
+                        <option>Santa Cruz</option>
+                        <option>Tarija</option>
+                        <option>Oruro</option>
+                        <option>Beni</option>
+                        <option>Pando</option>
+                        <option>Chuquisaca</option>
+                        <option>Potosí</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="email" class="form-label">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="email" formControlName="email">
+                </div>
+                <div class="col-md-4">
+                    <label for="celular" class="form-label">Nro. Celular (WhatsApp)</label>
+                    <input type="number" class="form-control" id="celular" formControlName="celular">
+                </div>
+                <div class="col-md-4">
+                    <label for="celular_referencia" class="form-label">Nro. Celular de referencia</label>
+                    <input type="number" class="form-control" id="celular_referencia"
+                        formControlName="celular_referencia">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">REGISTRARME</button>
+
+    </form>
+</div>

@@ -1,0 +1,43 @@
+<div class="container mbody">
+    <form class="mfocot border">
+        <div class="col-md-6">
+            <label for="recipient-name" class="col-form-label">Seleccione su póliza:</label>
+            <select name="nro_cotizacion" id="nro_cotizacion" class="form-control">
+                <option hidden>Seleccione una opción...</option>
+                <option value="">Automotor (15151517) </option>
+                <option value="">Inmueble (2515485)</option>
+                <option value="">Automovil (98541894)</option>
+            </select>
+        </div><br>
+        <div class="md-4">
+            <img src="assets/auto.jpg" class="img-fluid card-img" style="text-align: center; border-radius: 20px;">
+        </div>
+        <div class="container text-center">
+            <div class="row">
+                <h6> <b>Póliza:</b> 1551785478 <b>Inicio de vigencia:</b> 2023 agosto 05   <b>Fin de vigencia:</b> 2025 agosto 05</h6>
+                <div class="col-md-4">
+                    <label for="InputFSiniesto" class="form-label">Fecha de siniestro</label>
+                    <input type="date" class="form-control" id="f_siniestro">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputFDenuncia" class="form-label">Fecha de denuncia</label>
+                    <input type="date" class="form-control" id="f_denuncia">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputFDenuncia" class="form-label">Descripción</label>
+                    <input type="text" class="form-control" id="descripcion">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputLugarSiniestro" class="form-label">Lugar de Siniestro</label>
+                    <input type="text" class="form-control" id="lugar_siniestro">
+                </div>
+                <div class="col-md-4">
+                    <label for="InputFotoSiniestro" class="form-label">Foto de siniestro</label>
+                    <input type="file" class="form-control" id="foto_siniesto">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-success">Cotizar</button>
+
+    </form>
+</div>
