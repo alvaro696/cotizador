@@ -13,6 +13,8 @@ import { RamoTipo } from '../../interfaces/ramotipo.interface';
   styleUrl: './cotizar.component.css'
 })
 export class CotizarComponent implements OnInit {
+  @Input() additionalData: any;
+
   public distritos: Distrito[] = [];
   public ramos: Ramo[] = [];
   public tipos: RamoTipo[] = [];
@@ -31,6 +33,7 @@ export class CotizarComponent implements OnInit {
   constructor(private apiService: BackendService, private router: Router) { }
 
   ngOnInit(): void {
+    this.setMostrar();
     this.apiService.getlistDistritos().subscribe((distritos: Distrito[]) => {
       this.distritos = distritos;
       //console.log(this.data);
@@ -42,6 +45,14 @@ export class CotizarComponent implements OnInit {
   }
   navLogin() {
     this.router.navigateByUrl('login');
+  }
+  setMostrar() {
+    //console.log('ruta acutal -> ' + this.router.url.toString());
+    if (this.router.url.toString() == '/cotizaciones') {
+      return false;
+    } else {
+      return true;
+    }
   }
   onRamoChange(event: Event): void {
     console.log("cambio de select");
@@ -97,25 +108,38 @@ export class CotizarComponent implements OnInit {
     const celular = elemento.value;
     this.celular = parseInt(celular);
   }
-  submitForm() {
+  submitForm(): void {
     console.log("click crear cotizacion");
-    const formData = {
+    let formData = {
       id_ramo_tipo: this.selectedTipo,
       id_distrito: this.selectedDistrito,
       valor_asegurado: this.valorAsegurado,
       prima: this.apiResponsePrima,
       nombreCompleto: this.nombreCompleto,
       celular: this.celular,
+      id_cliente: this.additionalData
     };
     console.log(formData);
-    this.apiService.postCrear(formData).subscribe((response) => {
-      this.res = response;
-      console.log(this.res);
-      console.log(response.data.id_cotizacion);
-      this.router.navigate(['continuar_cotizacion', this.apiResponsePrima, response.data.id_cotizacion]);
-    }, (error) => {
-      console.error('Error al enviar los datos', error);
-    });
+    if (this.additionalData) {
+      this.apiService.postReCotizar(formData).subscribe((response) => {
+        this.res = response;
+        console.log(this.res);
+        console.log(response.data.id_cotizacion);
+        this.router.navigateByUrl('polizas');
+      }, (error) => {
+        console.error('Error al enviar los datos', error);
+      });
+    } else {
+      this.apiService.postCrear(formData).subscribe((response) => {
+        this.res = response;
+        console.log(this.res);
+        console.log(response.data.id_cotizacion);
+        this.router.navigate(['continuar_cotizacion', this.apiResponsePrima, response.data.id_cotizacion]);
+      }, (error) => {
+        console.error('Error al enviar los datos', error);
+      });
+    }
+
 
   }
 }

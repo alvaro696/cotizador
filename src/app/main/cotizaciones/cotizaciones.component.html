@@ -2,8 +2,8 @@
     <div class="row">
         <label class="mtitulo">Mis<i> cotizaciones</i> </label>
         @for(cot of cotizaciones; track cot.id_cotizacion){
-        <div class="col-sm-3 mb-2 mb-sm-0">
-            <div class="card car-v">
+        <div class="col-md-4">
+            <div class="card mb-4">
                 <img src="assets/auto.jpg" class="card-img-top card-img" alt="10px">
                 <div class="card-body">
                     <p class="card-text">Prima cotizada: {{cot.prima}}$ <br>Vigente hasta: 2023 sep. 25</p>
@@ -16,87 +16,7 @@
         </div>
         }
 
-        <!-- <div class="col-sm-3 mb-2 mb-sm-0">
-            <div class="card car-w">
-                <img src="assets/casa.jpg" class="card-img-top card-img" alt="150px">
-                <div class="card-body">
-                    <p class="card-text">Prima cotizada: 500$ <br>Vigente hasta: 2023 agosto 25</p>
-                    <p class="card-text">Nro.: 2515485<br></p>
-                    <button type="button" class="btn btn-danger">Descargar cotización <i
-                            class="fa-solid fa-file-pdf"></i></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 mb-2 mb-sm-0">
-            <div class="card car-d">
-                <img src="assets/transporte.jpg" class="card-img-top card-img" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Prima cotizada: 500$ <br>Vigente hasta: 2023 agosto 20</p>
-                    <p class="card-text">Nro.: 85147485<br></p>
-                    <button type="button" class="btn btn-danger">Descargar cotización <i
-                            class="fa-solid fa-file-pdf"></i></button>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-3 mb-2 mb-sm-0">
-            <div class="card car-v">
-                <img src="assets/auto.jpg" class="card-img-top card-img" alt="...">
-                <div class="card-body">
-                    <p class="card-text">Prima cotizada: 500$ <br>Vigente hasta: 2023 sep. 25</p>
-                    <p class="card-text">Nro.: 98541894<br></p>
-                    <button type="button" class="btn btn-danger">Descargar cotización <i
-                            class="fa-solid fa-file-pdf"></i></button>
-                </div>
-            </div>
-        </div> -->
-
     </div>
 </div>
 
-
-<div class="containe mbody">
-    <form class="mfocot border">
-        <div class="container text-center">
-            <h2>Resultado - cotizaciones</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <label for="recipient-name" class="col-form-label">Seleccione su Cotización:</label>
-                    <select name="nro_cotizacion" id="nro_cotizacion" class="form-control">
-                        <option hidden>Seleccione una opción...</option>
-                        <option value="">Automotor (15151517) </option>
-                        <option value="">Inmueble (2515485)</option>
-                        <option value="">Automovil (98541894)</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="InputNomber" class="form-label">Prima</label>
-                    <input type="text" class="form-control" id="prima" readonly value="500 $">
-                </div>
-                <h4>Datos para la emisión</h4>
-                <div class="col-md-4">
-                    <label for="recipient-name" class="col-form-label">Periodo de duración:</label>
-                    <select name="periodo_duracion" id="periodo_duracion" class="form-control">
-                        <option hidden>Seleccione una opción...</option>
-                        <option value="">Semestral (Seis Meses)</option>
-                        <option value="">Anual</option>
-                        <option value="">Bianual</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="message-text" class="col-form-label">Tipo de pago:</label>
-                    <select name="tipo_pago" id="tipo_pago" class="form-control">
-                        <option hidden>Seleccione una opción...</option>
-                        <option value="">Contado</option>
-                        <option value="">Credito</option>
-                    </select>
-                </div>
-                <div class="col-md-4">
-                    <label for="InputFDenuncia" class="form-label">Nro. Cuotas</label>
-                    <input type="number" step="0.00" class="form-control" id="nro_cuotas">
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-success">Emitir póliza</button>
-
-    </form>
-</div>
+<app-cotizar [additionalData]="id_cliente"></app-cotizar>

@@ -1,17 +1,18 @@
-<div class="mpoliza">
+<h3 >MIS PÓLIZAS VIGENTES</h3>
+<div class="container my-3">
   <div class="row">
-    <label class="mtitulo">Mis<i> Pólizas</i> </label>
     @for(pol of polizas; track pol.id_cotizacion){
-    <div class="col-sm-3 mb-2 mb-sm-0">
-      <div class="card car-v">
-        <img [src]="pol.items[0].foto_frontal" class="card-img-top card-img" alt="10px">
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <img [src]="pol.items[0].foto_frontal" class="card-img-top" alt="Imagen de ejemplo">
         <div class="card-body">
-          <h3>{{pol.cod_poliza}}</h3>
-          <p class="card-text">Prima: {{pol.prima}} $ <br>Inicio de Vigencia: {{pol.f_ini}} <br> Fin de Vigencia:
-            {{pol.f_fin}} <br>.
-          </p>
-          <button type="button" class="btn btn-info">Denuncia un siniestro</button>
-          <button type="button" class="btn btn-success">Estado de cuenta</button>
+          <h5 class="card-title">{{pol.cod_poliza}}</h5>
+          <p class="card-text">Valor Asegurado: {{pol.valor_asegurado}} $ <br>Prima: {{pol.prima}} $ <br>Inicio de
+            Vigencia: {{pol.f_ini}} <br> Fin de Vigencia:
+            {{pol.f_fin}}</p>
+
+          <button type="button" class="btn btn-primary" (click)="crearSiniestro(pol.id_poliza)">Denuncia un
+            siniestro</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,108 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+.navbar {
+  margin-bottom: 20px;
+  /* Espacio entre la navbar y el contenido */
+
+}
+
+
+
+.social-icons a {
+  font-size: 1.5rem;
+  /* Tamaño de los iconos de redes sociales */
+}
+
+@media (max-width: 576px) {
+  .social-icons a {
+    font-size: 1.2rem;
+    /* Tamaño de los iconos en pantallas pequeñas */
+  }
+}
+
+.card {
+  border-radius: 0.5rem;
+  /* Esquinas redondeadas */
+  overflow: hidden;
+  /* Asegura que las imágenes no se desborden */
+}
+
+.card-img-top {
+  object-fit: cover;
+  /* Asegura que la imagen cubra el área de la tarjeta */
+  height: 200px;
+  /* Ajusta la altura de la imagen */
+}
+
+.card-body {
+  color: #3c5975 !important;
+  padding: 1.25rem;
+  /* Espaciado interno del cuerpo de la tarjeta */
+}
+
+.card-title {
+  font-size: 1.25rem;
+  /* Tamaño del título */
+  margin-bottom: 0.75rem;
+  /* Espacio debajo del título */
+}
+
+.card-text {
+  font-size: 1rem;
+  /* Tamaño del texto de descripción */
+  margin-bottom: 1rem;
+  /* Espacio debajo del texto de descripción */
+}
+
+.btn-primary {
+  border-radius: 0.25rem;
+  /* Esquinas redondeadas del botón */
+}
+.table {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  vertical-align: middle; /* Centra el texto verticalmente */
+}
+
+.table thead th {
+  background-color: #212529; /* Color de fondo de los encabezados */
+  color: #fff; /* Color de texto de los encabezados */
+  border-bottom: 2px solid #343a40; /* Línea de separación entre encabezados */
+}
+
+.table-hover tbody tr:hover {
+  background-color: #343a40; /* Color de fondo al hacer hover */
+}
+
+.badge {
+  font-size: 0.9rem; /* Ajusta el tamaño de la badge */
+  padding: 0.5rem; /* Añade espaciado a la badge */
+  border-radius: 0.25rem; /* Redondea las esquinas de la badge */
+}
+
+.badge.bg-warning {
+  background-color: #ffc107; /* Color de la badge de estado pendiente */
+  color: #212529; /* Color del texto */
+}
+
+.badge.bg-success {
+  background-color: #28a745; /* Color de la badge de estado pagado */
+}

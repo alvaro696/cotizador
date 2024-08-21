@@ -6,6 +6,7 @@ import { response } from 'express';
 import { Distrito } from '../interfaces/distrito.interface';
 import { Ramo } from '../interfaces/ramo.interface';
 import { RamoTipo } from '../interfaces/ramotipo.interface';
+import { ApiResponse } from '../interfaces/poliza-pago.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -45,6 +46,16 @@ export class BackendService {
   postCrear(data: any): Observable<any> {
     let url = `${environment.API_URL}/cotizacion/crear`;
     return this.httpClient.post<any>(url, data);
+  }
+  postReCotizar(data: any): Observable<any> {
+    const token = localStorage.getItem('authToken');
+    //let url = `${environment.API_URL}/mis_pagos/listar/${id_cliente}`;
+    let headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Accept', 'application/json');
+
+    let url = `${environment.API_URL}/cotizacion/recotizar`;
+    return this.httpClient.post<any>(url, data, { headers });
   }
   postRegistrarse(data: any): Observable<any> {
     let url = `${environment.API_URL}/cliente/crear`;
@@ -107,6 +118,20 @@ export class BackendService {
       )
   }
 
+  getMiPoliza(id_poliza: number): Observable<any> {
+    const token = localStorage.getItem('authToken');
+
+    let url = `${environment.API_URL}/mis_polizas/seleccionar/${id_poliza}`;
+    let headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Accept', 'application/json');
+
+    return this.httpClient.get(url, { headers })
+      .pipe(
+        map((response: any) => response.data)
+      )
+  }
+
   postCrearPoliza(data: any, id_cotizacion: number): Observable<any> {
     const token = localStorage.getItem('authToken');
 
@@ -115,5 +140,29 @@ export class BackendService {
       .set('Authorization', `Bearer ${token}`)
       .set('Accept', 'application/json');
     return this.httpClient.post<any>(url, data, { headers });
+  }
+
+  postCrearSiniestro(data: any, id_poliza: number): Observable<any> {
+    const token = localStorage.getItem('authToken');
+
+    let url = `${environment.API_URL}/siniestros/crear/${id_poliza}`;
+    let headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Accept', 'application/json');
+    return this.httpClient.post<any>(url, data, { headers });
+  }
+
+  getMisPagos(id_cliente: any): Observable<ApiResponse> {
+    const token = localStorage.getItem('authToken');
+
+    let url = `${environment.API_URL}/mis_pagos/listar/${id_cliente}`;
+    let headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Accept', 'application/json');
+
+    return this.httpClient.get<ApiResponse>(url, { headers });
+    /*    .pipe(
+         map((response: any) => response.data)
+       ) */
   }
 }

@@ -47,7 +47,7 @@ export const routes: Routes = [
         path: 'polizas', component: PolizaComponent
     },
     {
-        path: 'siniestros', component: SiniestroComponent
+        path: 'siniestros/:id_poliza', component: SiniestroComponent
     },
     {
         path: 'plan_pagos', component: PlanPagosComponent

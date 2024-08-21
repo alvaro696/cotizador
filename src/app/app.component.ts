@@ -12,11 +12,12 @@ import { ProductosComponent } from './inicio/productos/productos.component';
 import { TalleresComponent } from './inicio/talleres/talleres.component';
 import { PlanPagosComponent } from './main/plan-pagos/plan-pagos.component';
 import { CotizacionComponent } from './main/cotizacion/cotizacion.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, LoginComponent, CotizarComponent, ClienteComponent, HeaderComponent, FooterComponent, PolizaComponent, SiniestroComponent, CotizaComponent, ProductosComponent, TalleresComponent, PlanPagosComponent,CotizacionComponent],
+  imports: [RouterOutlet, LoginComponent, CotizarComponent, ClienteComponent, HeaderComponent, FooterComponent, PolizaComponent, SiniestroComponent, CotizaComponent, ProductosComponent, TalleresComponent, PlanPagosComponent,CotizacionComponent,CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

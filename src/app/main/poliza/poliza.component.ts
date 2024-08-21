@@ -20,4 +20,8 @@ export class PolizaComponent implements OnInit {
       console.log(this.polizas);
     });
   }
+  crearSiniestro($id_poliza: number) {
+    console.log("id_poliza -> ", $id_poliza);
+    this.router.navigate(['siniestros', $id_poliza])
+  }
 }

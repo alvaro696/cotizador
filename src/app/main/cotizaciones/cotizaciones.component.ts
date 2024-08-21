@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../../services/backend.service';
 import { Router } from '@angular/router';
+import { CotizarComponent } from "../../inicio/cotizar/cotizar.component";
 
 @Component({
   selector: 'app-cotizaciones',
   standalone: true,
-  imports: [],
+  imports: [CotizarComponent],
   templateUrl: './cotizaciones.component.html',
   styleUrl: './cotizaciones.component.css'
 })
@@ -14,6 +15,7 @@ export class CotizacionesComponent implements OnInit {
 
   public cotizaciones: any[] = [];
   public id_cotizacion: number | null = null;
+  public id_cliente = localStorage.getItem('id_cliente');
 
   ngOnInit() {
     this.apiService.getMisCotizaciones().subscribe((response) => {

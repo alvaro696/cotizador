@@ -13,101 +13,19 @@
     box-sizing: border-box;
 }
 
-
 /*style de header*/
-.menu{
-    background-color: var(--three);
-    color: var(--three);
-    height: 100%;
-}
-/*style de footer*/
-.mtitulo{
-    font-size: 30px;
-    color: var(--four); 
-    text-align: left;
-}
-.mtitulos{
-    font-size: 20px;
-    color: var(--one);
-    text-align: center;
-}
 
-.mfoot{
-    background-color: var(--five);
-    color: var(--one);
-    padding: 1% 0;
-    text-align: center;
-    font-size: 10px;
-    top: 0;
-}
-/*cuerpo*/
-.mbody{
-    text-align: center;
-    flex: 1;
-    color: var(--basic);
-    padding: 10px;
-    display: flex;
-    position: relative;
-    padding: auto;
-}
-.mbody button{
-    margin: 1%;
-}
-.mbody label{
-    text-align: right;
-}
-/*cotizsa*/
-.mfocot{
-    padding: 2.5vh;
-    margin: 5vh;
-    border-radius: 50px;
-    background-color: var(--one);  
-}
-/*poliza*/
-.mpoliza{
-    padding: 2.5vh;
-    margin: 5vh;
-    border-radius: 50px;
-    background-color: var(--one); 
-    
-}
 .card {
-    width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
     text-align: center;
-    color: var(--basic);
 }
 .card button{
     color: var(--basic);
     border-radius: 20px;
     margin: 1%;
 }
-.card button:hover{
-    color: var(--basic);
-    background-color: var(--four);
-}
-.car-v{
-    width: 18rem;
-    background: linear-gradient(to top, rgb(252, 237, 234), #0af402);
-    color: var(--one);
-}
-.car-w{
-    width: 18rem;
-    background: linear-gradient(to top, rgb(252, 237, 234), rgb(210, 214, 2));
-    color: var(--one);
-}
-.car-d{
-    width: 18rem;
-    background:linear-gradient(to top, #fcedea, #f70f0f);
-    color: var(--basic);
-}
+
 .card-img {
     width: 100%;
-    height: 25vh;
     display: block;
     object-fit: cover;
 
