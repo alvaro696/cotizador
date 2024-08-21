@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
   setMostrar() {
     //console.log('ruta acutal -> ' + this.router.url.toString());
-    if (this.router.url.toString() == '/inicio' || this.router.url.toString() == '/login') {
+    if (this.router.url.toString() == '/inicio' || this.router.url.toString() == '/login' ) {
       return false;
     } else {
       return true;

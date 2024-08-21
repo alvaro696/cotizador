@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from '../../environments/environment.development';
 import { response } from 'express';
+import { Distrito } from '../interfaces/distrito.interface';
+import { Ramo } from '../interfaces/ramo.interface';
+import { RamoTipo } from '../interfaces/ramotipo.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +14,7 @@ export class BackendService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getlistDistritos(): Observable<any> {
+  getlistDistritos(): Observable<Distrito[]> {
     let url = `${environment.API_URL}/distrito/listar`;
     //console.log(this.httpClient.get(url));
     return this.httpClient.get(url)
@@ -19,7 +22,7 @@ export class BackendService {
         map((response: any) => response.data)
       )
   }
-  getListRamo(): Observable<any> {
+  getListRamo(): Observable<Ramo[]> {
     let url = `${environment.API_URL}/ramo/listar`;
     //console.log(this.httpClient.get(url));
     return this.httpClient.get(url)
@@ -27,7 +30,7 @@ export class BackendService {
         map((response: any) => response.data)
       )
   }
-  getListRamoTipos(id_ramo: string): Observable<any> {
+  getListRamoTipos(id_ramo: string): Observable<RamoTipo[]> {
     let url = `${environment.API_URL}/ramo_tipo/listar/${id_ramo}`;
     //console.log(this.httpClient.get(url));
     return this.httpClient.get(url)

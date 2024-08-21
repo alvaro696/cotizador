@@ -1,4 +1,4 @@
 export interface Distrito {
-    id_distrito: BigInteger;
+    id_distrito: number;
     distrito: string;
 }

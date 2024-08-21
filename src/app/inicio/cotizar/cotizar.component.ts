@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormsModule, FormGroup, ReactiveFormsModule, FormControl } from '@angular/forms';
 import { BackendService } from '../../services/backend.service';
 import { Router } from '@angular/router';
+import { Distrito } from '../../interfaces/distrito.interface';
+import { Ramo } from '../../interfaces/ramo.interface';
+import { RamoTipo } from '../../interfaces/ramotipo.interface';
 @Component({
   selector: 'app-cotizar',
   standalone: true,
@@ -10,9 +13,9 @@ import { Router } from '@angular/router';
   styleUrl: './cotizar.component.css'
 })
 export class CotizarComponent implements OnInit {
-  public distritos: any[] = [];
-  public ramos: any[] = [];
-  public tipos: any[] = [];
+  public distritos: Distrito[] = [];
+  public ramos: Ramo[] = [];
+  public tipos: RamoTipo[] = [];
   public res: any[] = [];
   public apiResponsePrima: number | null = null;
 
@@ -28,12 +31,12 @@ export class CotizarComponent implements OnInit {
   constructor(private apiService: BackendService, private router: Router) { }
 
   ngOnInit(): void {
-    this.apiService.getlistDistritos().subscribe((response) => {
-      this.distritos = response;
+    this.apiService.getlistDistritos().subscribe((distritos: Distrito[]) => {
+      this.distritos = distritos;
       //console.log(this.data);
     });
-    this.apiService.getListRamo().subscribe((response) => {
-      this.ramos = response;
+    this.apiService.getListRamo().subscribe((ramo: Ramo[]) => {
+      this.ramos = ramo;
       //console.log(this.data);
     });
   }
@@ -47,8 +50,8 @@ export class CotizarComponent implements OnInit {
     const id_ramo = elemento.value;
     this.selectedRamo = id_ramo;
     if (id_ramo) {
-      this.apiService.getListRamoTipos(id_ramo).subscribe((response) => {
-        this.tipos = response;
+      this.apiService.getListRamoTipos(id_ramo).subscribe((tipos: RamoTipo[]) => {
+        this.tipos = tipos;
         console.log(this.tipos);
       });
     }
